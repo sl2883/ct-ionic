@@ -1,0 +1,6 @@
+{
+	"appId": "com.sunny.ctios",
+	"appName": "CapApp",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}
