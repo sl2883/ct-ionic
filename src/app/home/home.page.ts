@@ -32,14 +32,14 @@ export class HomePage implements OnInit {
       // Request permission to use push notifications
       // iOS will prompt user and return if they granted permission or not
       // Android will just grant without prompting
-      PushNotifications.requestPermissions().then(result => {
-        if (result.receive === 'granted') {
-          // Register with Apple / Google to receive push via APNS/FCM
-          PushNotifications.register();
-        } else {
-          // Show some error
-        }
-      });
+      // PushNotifications.requestPermissions().then(result => {
+      //   if (result.receive === 'granted') {
+      //     // Register with Apple / Google to receive push via APNS/FCM
+      //     PushNotifications.register();
+      //   } else {
+      //     // Show some error
+      //   }
+      // });
   
       // // On success, we should be able to receive notifications
       // PushNotifications.addListener('registration',
