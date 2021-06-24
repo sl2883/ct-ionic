@@ -15,18 +15,9 @@ import {
   providers:[Platform, CleverTap]
 })
 export class AppComponent implements OnInit {
-  ngOnInit() {
-    PushNotifications.requestPermissions().then(result => {
-      if (result.receive === 'granted') {
-        // Register with Apple / Google to receive push via APNS/FCM
-        PushNotifications.register();
-      } else {
-        // Show some error
-      }
-    });
-  }
+  
 
-  constructor(platform: Platform, clevertap: CleverTap) {
+  constructor(platform: Platform, private clevertap: CleverTap) {
     platform.ready().then(() => {
       console.log("I'm here in App Component")
       
@@ -47,5 +38,9 @@ export class AppComponent implements OnInit {
       clevertap.enablePersonalization();
 
     });
+  }
+
+  ngOnInit() {
+    this.clevertap.registerPush();
   }
 }
